@@ -1,0 +1,24 @@
+class Person {
+    constructor(fullName, mass, height) {
+        this.fullName = fullName;
+        this.mass = mass;
+        this.height = height;
+        this.bmi = this.calcBMI();
+    }
+
+    calcBMI() {
+        let bmi = this.mass / (this.height ** 2);
+        return bmi;
+    }
+}
+
+// Tạo đối tượng cho Mark và John
+let mark = new Person("Mark Miller", 78, 1.69);
+let john = new Person("John Smith", 92, 1.95);
+
+// So sánh BMI của Mark và John
+if (mark.bmi > john.bmi) {
+    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`);
+} else {
+    console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`);
+}
